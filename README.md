@@ -1,6 +1,4 @@
-== Set:
-  * MAILER_DOMAIN
-  * MAILER_SMTP_ADDRESS
-  * MAILER_PORT
-  * MAILER_EMAIL
-  * MAILER_PASSWORD
+# Read Me
+
+## Upgrading Heroku stack
+- https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack
