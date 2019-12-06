@@ -5,20 +5,23 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '5.1.3'
-
 gem 'sassc'
+
+# gem 'sass-rails'
 
 gem 'mongoid', '6.1.0'
 
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 
-gem 'uglifier', '3.2.0'
+gem 'rails', '5.1.3'
+# , '3.2.0'
 
 gem 'jquery-rails'
 
 gem 'turbolinks', '~> 5'
+
+gem 'uglifier'
 
 gem 'jbuilder', '~> 2.5'
 
