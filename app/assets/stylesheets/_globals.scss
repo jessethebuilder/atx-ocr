@@ -1,0 +1,19 @@
+#main_content_wrapper{
+  // background-color: $background_color_1;
+}
+
+#main_content{
+  // margin: 3px;
+  // margin-top: 0px;
+  background-color: $text_color_1;
+  border: 3px solid $background_color_1;
+}
+
+th{
+  white-space: nowrap;
+  border-right: 2px solid $background_color_2;
+}
+
+th:last-child{
+  border-right-width: 0px;
+}

@@ -9,6 +9,10 @@ class Client
   field :email, type: String
   validates :email, presence: true, uniqueness: true
 
+  field :email2, type: String
+
+  field :email3, type: String
+
   field :keywords, type: Array, default: []
   validates :keywords, presence: true
 

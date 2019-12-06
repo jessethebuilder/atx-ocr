@@ -27,7 +27,6 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
-    # jfx
     # uncomplete
     # render
     # complete
@@ -99,6 +98,9 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:email, :keywords, :name, :company_name, :phone, :client_number)
+      params.require(:client).permit(
+        :email, :email2, :email3, :keywords,
+        :name, :company_name, :phone, :client_number
+      )
     end
 end

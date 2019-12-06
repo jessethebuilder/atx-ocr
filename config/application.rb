@@ -27,6 +27,24 @@ module MongoBase
     #  config.active_job.queue_adapter = :resque
 
     config.time_zone = 'Eastern Time (US & Canada)'
+
+    config.action_mailer.default_url_options = {host: ENV.fetch('APP_HOST')}
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.default :charset => 'utf-8'
+
+    config.action_mailer.smtp_settings = {
+      :address => ENV.fetch('SMTP_ADDRESS'),
+      :port => ENV.fetch('MAILER_PORT'),
+      :domain => ENV.fetch('MAILER_DOMAIN'),
+      :authentication => 'plain',
+      :user_name => ENV.fetch('MAILER_EMAIL'),
+      :password => ENV['MAILER_PASSWORD'],
+
+      :enable_starttls_auto => true
+      # :openssl_verify_mode => 'none'
+    }
   end
 end
 

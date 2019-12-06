@@ -3,6 +3,10 @@
 #top_nav{
   background-color: $background_color_1;
   height: 55px;
+  margin-bottom: 0px;
+  border-bottom-width: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 
   .navbar-nav{
     li{

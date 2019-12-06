@@ -23,15 +23,27 @@
         </div>
       </div>
       <div class="col-sm-4">
+        <div class="form-group req">
+          <%= f.label :email2 %>
+          <%= f.email_field :email2 %>
+        </div>
+
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group req">
+          <%= f.label :email3 %>
+          <%= f.email_field :email3 %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
         <div class="form-group">
           <%= f.label :phone %>
           <%= f.text_field :phone %>
         </div>
       </div>
-      <div class="col-sm-4"></div>
-    </div>
-
-    <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
           <%= f.label :company_name %>
@@ -44,7 +56,6 @@
           <%= f.text_field :client_number %>
         </div>
       </div>
-      <div class="col-sm-4"></div>
     </div>
 
     <div class="row">

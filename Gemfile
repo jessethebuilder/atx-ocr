@@ -11,7 +11,7 @@ gem 'bootstrap-sass'
 
 gem 'jquery-ui-rails'
 
-gem 'devise'
+gem 'devise', '4.7.1'
 # gem 'kaminari'
 
 # gem 'carrierwave'
@@ -22,7 +22,7 @@ gem 'mini_magick'
 
 gem 'data_uri'
 
-
+gem 'figaro'
 
 # gem 'tesseract-ocr', '~> 0.1.8'
 
@@ -67,10 +67,8 @@ group :test do
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
-# , '~> 5.0.1'
-# gem 'rails', '~> 4.0.2'
-# Use Puma as the app server
+gem 'rails', '5.1.3'
+
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -115,4 +113,4 @@ gem 'rails_12factor', group: :production
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-ruby '2.3.1'
+ruby '2.5.6'

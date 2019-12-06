@@ -14,10 +14,14 @@
   <body>
     <%= render partial: 'parts/main_nav' %>
 
-    <%= the_flash %>
+    <div id="main_content_wrapper">
+      <div id="main_content">
+        <%= the_flash %>
 
-    <%= yield %>
+        <%= yield %>
 
-    <%= render partial: 'parts/footer' %>
+        <%= render partial: 'parts/footer' %>
+      </div>
+    </div>
   </body>
 </html>

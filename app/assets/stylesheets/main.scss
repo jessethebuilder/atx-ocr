@@ -1,5 +1,7 @@
 @import 'variables';
 
+@import 'globals';
+
 @import 'bootstrap';
 @import 'farm_shed/all';
 
@@ -10,8 +12,3 @@
 @import 'mail_queues';
 
 @import 'mail_image_requests';
-
-
-.page_heading{
-  // background-color: #333;
-}
