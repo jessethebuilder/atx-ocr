@@ -8,8 +8,6 @@ class ClientKeywordMatch
   field :keyword, type: String
   validates :keyword, presence: true
 
-  field :email_sent, type: Boolean, default: false
-
   before_create :delete_conflicting_matches
 
   private

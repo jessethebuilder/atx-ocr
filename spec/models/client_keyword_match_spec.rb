@@ -15,9 +15,6 @@ describe ClientKeywordMatch, type: :model do
   end
 
   describe 'Attributes' do
-    specify '#email_sent should default to false' do
-      ckm.email_sent.should == false
-    end
   end
 
   describe 'Idioms' do
