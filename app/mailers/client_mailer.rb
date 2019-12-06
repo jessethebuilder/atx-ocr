@@ -8,6 +8,10 @@ class ClientMailer < ApplicationMailer
     @client = client
     @password = password
 
-    mail to: "#{@client.name} <#{@client.email}>", subject: 'Welcome', delivery_method_options: delivery_options
+    mail(
+      to: @client.emails,
+      subject: 'Welcome to SaGE Workspace',
+      delivery_method_options: delivery_options
+    )
   end
 end

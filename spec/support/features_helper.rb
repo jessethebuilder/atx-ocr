@@ -5,12 +5,13 @@ def sign_in(user)
   fill_in 'Email', with: user.email
   fill_in 'Password', with: ENV['PASSWORD']
   click_button 'Log in'
-  u
+  user
 end
 
 def sign_in_admin
-  u = create(:admin, password: ENV['PASSWORD'])
-  sign_in(u)
+  admin = create(:admin, password: ENV['PASSWORD'])
+  sign_in(admin)
+  admin
 end
 
 def sign_in_user

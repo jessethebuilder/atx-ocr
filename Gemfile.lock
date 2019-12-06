@@ -6,12 +6,6 @@ GIT
       rails
 
 GIT
-  remote: https://github.com/jessethebuilder/farm_ruby
-  revision: 4d7032ef6e8f5a68a3e876575a5151731739a568
-  specs:
-    farm_ruby (0.1.0)
-
-GIT
   remote: https://github.com/jessethebuilder/farm_shed
   revision: 446ef2de7e9ab769f714c061626fd5a6145a9ba1
   branch: lite
@@ -335,7 +329,6 @@ DEPENDENCIES
   factory_girl_rails
   faker
   farm_devise_views!
-  farm_ruby!
   farm_shed!
   figaro
   guard-rspec

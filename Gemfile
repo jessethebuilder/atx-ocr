@@ -31,7 +31,7 @@ gem 'faker'
 
 gem 'whenever', :require => false
 
-gem 'farm_ruby', git: 'https://github.com/jessethebuilder/farm_ruby'
+# gem 'farm_ruby', git: 'https://github.com/jessethebuilder/farm_ruby'
 
 gem 'farm_shed', git: 'https://github.com/jessethebuilder/farm_shed', branch: 'lite'
 # gem 'farm_shed', path: '/var/www/my_gems/farm_shed', branch: 'lite'

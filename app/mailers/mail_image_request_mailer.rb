@@ -11,8 +11,10 @@ class MailImageRequestMailer < ApplicationMailer
     @client = @mail_image_request.client
     delivery_options = {:password => ENV['MAILER_PASSWORD']}
 
-    mail(to: "#{@client.name} <#{@client.email}>", subject: "#{@mail_image_request.type.titlecase} Request Completed (Do not Reply)", :delivery_method_options => delivery_options)
+    mail(
+      to: @client.emails,
+      subject: "#{@mail_image_request.type.titlecase} Request Completed (Do not Reply)",
+      delivery_method_options: delivery_options
+    )
   end
-
-
 end

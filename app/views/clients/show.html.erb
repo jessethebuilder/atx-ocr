@@ -15,7 +15,7 @@
         <h1>
           <%= @client.name %>
           <small><%= mail_to @client.email %></small>
-        </h2>
+        </h1>
         <div class="well">
           <h2>Keywords</h2>
           <%= @client.keywords.join(', ') %>
@@ -106,7 +106,7 @@
 <script>
   $(document).ready(function(){
     initForwardRequests();
-    
+
     var mqp = new MailQueuePopovers();
     mqp.init();
   });

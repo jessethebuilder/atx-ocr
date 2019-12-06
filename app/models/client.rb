@@ -38,6 +38,13 @@ class Client
     true
   end
 
+  def emails
+    arr = [self.email]
+    arr << self.email2 if self.email2
+    arr << self.email3 if self.email3
+    arr
+  end
+
   def keywords=(words)
     # :keywords are made into an array, as they come in as a string via Controller
     if words.class == String
