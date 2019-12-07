@@ -67,6 +67,7 @@ describe MailQueue, type: :model do
 
     describe '#name' do
       it 'exists' do
+        mq.save!
         mq.name.should_not == nil
       end
     end

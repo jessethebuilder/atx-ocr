@@ -17,7 +17,7 @@ class MailQueue
   scope :marked_for_completion, -> { where(marked_for_completion: true).incomplete }
 
   def name
-    D.new(self.created_at).datetime
+    D.new(created_at).datetime
   end
 
   def mail_images_for(client)
