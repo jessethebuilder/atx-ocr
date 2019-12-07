@@ -9,7 +9,10 @@ gem 'sprockets', '3.7.1'
 
 gem 'sass-rails'
 
-gem 'mongoid', '6.1.0'
+# gem 'mongoid', '6.1.0'
+gem 'mongo', '2.8'
+gem 'mongoid', '~> 7.0.5'
+
 
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
