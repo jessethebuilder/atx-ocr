@@ -22,7 +22,10 @@
       </div>
     </div><!-- row -->
 
-    <% @client.mail_images.sort{ |a, b| b.created_at <=> a.created_at }.group_by{ |mi| mi.created_at.to_date }.each do |date, mi_group| %>
+    <% @client.mail_images
+              .sort{ |a, b| b.created_at <=> a.created_at }
+              .group_by{ |mi| mi.created_at.to_date }
+              .each do |date, mi_group| %>
       <div class="row">
         <div class="col-xs-12">
           <h2 class="text-center" style="margin-bottom:30px;"><%= date.strftime('%B %e, %Y') %></h2>

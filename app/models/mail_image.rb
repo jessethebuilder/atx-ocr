@@ -22,7 +22,7 @@ class MailImage
   has_many :mail_image_requests, dependent: :destroy
 
   def clients
-    self.client_keyword_matches.map{ |ckm| ckm.client }.uniq
+    self.client_keyword_matches.map{ |client_keyword_match| client_keyword_match.client }.uniq
   end
 
   def is_requestable_for?(client)
@@ -39,13 +39,13 @@ class MailImage
 
   def match_to_clients
     # Creates ClientKeywordMatches
-    Client.all.each do |c|
-      c.keywords.each do |k|
-        if /#{k}/i =~ self.text
-          ckm = ClientKeywordMatch.new(keyword: k)
-          ckm.client = c
-          ckm.mail_image = self
-          ckm.save!
+    Client.all.each do |client|
+      client.keywords.each do |keyword|
+        if /#{keyword}/i =~ self.text
+          client_keyword_match = ClientKeywordMatch.new(keyword: keyword)
+          client_keyword_match.client = client
+          client_keyword_match.mail_image = self
+          client_keyword_match.save!
         end
       end
     end

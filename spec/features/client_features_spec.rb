@@ -4,6 +4,8 @@ describe 'Client Features', type: :feature do
   before do
     sign_in_admin
 
+    @client = create(:client)
+
     @client_attributes = attributes_for(:client)
   end
 
@@ -68,6 +70,40 @@ describe 'Client Features', type: :feature do
       fill_in 'Email3', with: email3
       click_button 'Create Client'
       Client.last.email3.should == email3
+    end
+
+    it 'should create a user' do
+      client_min
+      expect{ click_button 'Create Client' }.to change{ User.count }.by(1)
+    end
+
+    specify 'New User should have email address passed to client' do
+      client_min
+      click_button 'Create Client'
+      User.last.email.should == @client_attributes[:email]
+    end
+
+    it 'should set a custom password on User if passed' do
+      password = random_password
+
+      client_min
+      fill_in 'Password', with: password
+      click_button 'Create Client'
+
+      User.last.valid_password?(password).should == true
+    end
+  end # Creating a Client
+
+  describe 'Updating a Client' do
+    it 'should update a user password, if one is provided' do
+      password = random_password
+
+      visit "/clients/#{@client.to_param}/edit"
+      fill_in 'Password', with: password
+
+      click_button 'Update Client'
+
+      @client.reload.user.valid_password?(password).should == true
     end
   end
 end

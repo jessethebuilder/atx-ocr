@@ -49,10 +49,4 @@ class MailQueue
     self.update_attribute(:complete, true)
     count
   end
-
-
-
-  # def email_images_for_client(client)
-  #   client.mail_images.select{ |mi| mi.mail_queue == self }.uniq.map{ |mi| mi.image }
-  # end
 end

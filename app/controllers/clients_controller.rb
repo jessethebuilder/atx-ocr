@@ -49,14 +49,10 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        # When Client is saved, a User is saved. Overwrite password here, so
-        # the correct one goes out in the confirmation email.
-        pw = random_password
-        u = @client.user
-        u.password = pw
-        u.save
+        password = params[:password] || random_password
+        @client.user.update(password: password)
 
-        ClientMailer.after_sign_up(@client, pw).deliver_now
+        ClientMailer.after_sign_up(@client, password).deliver_now
         format.html { redirect_to clients_path, notice: "Client: #{@client.email} was sucessfully created." }
         # format.json { render :show, status: :created, location: @client }
       else
@@ -66,11 +62,11 @@ class ClientsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /clients/1
-  # PATCH/PUT /clients/1.json
   def update
     respond_to do |format|
+
       if @client.update(client_params)
+        @client.user.update(password: params[:password]) if params[:password] # spec spec
         format.html { redirect_to clients_path, notice: "Client: #{@client.email} was sucessfully updated." }
         # format.json { render :show, status: :ok, location: @client }
       else

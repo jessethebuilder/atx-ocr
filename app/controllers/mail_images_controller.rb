@@ -37,8 +37,8 @@ class MailImagesController < ApplicationController
     @mail_image.thumb = "#{S3_BUCKET.url}/#{thumb_path}"
 
     # Do OCR
-    tmp_path = MiniMagick::Image.open(@mail_image.image)
-    ocr = RTesseract.new(tmp_path)
+    image = MiniMagick::Image.open(@mail_image.image)
+    ocr = RTesseract.new(image.path)
     @mail_image.text = ocr.to_s.strip
 
     @mail_image.match_to_clients

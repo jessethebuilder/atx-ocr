@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# gem 'sassc'
-
 gem 'sprockets', '3.7.1'
 
 gem 'sass-rails'
@@ -28,6 +26,8 @@ gem 'uglifier'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '4.7.1'
+
+gem 'sidekiq'
 
 gem 'aws-sdk', '~> 2'
 

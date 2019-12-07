@@ -23,10 +23,12 @@ module MongoBase
     # -- all .rb files in that directory are automatically loaded.
 
     #  config.active_job.queue_adapter = :sucker_punch
-    #  config.active_job.queue_adapter = :sidekiq
+     config.active_job.queue_adapter = :sidekiq
     #  config.active_job.queue_adapter = :resque
 
     config.time_zone = 'Eastern Time (US & Canada)'
+
+
 
     config.action_mailer.default_url_options = {host: ENV.fetch('APP_HOST')}
     config.action_mailer.delivery_method = :smtp

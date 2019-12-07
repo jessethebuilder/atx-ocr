@@ -34,11 +34,36 @@
         var box = link.closest('.form-group');
 
         // Create a Select for possible mailing options
-        var select = $('<select name="shipping_company" class="form-control"></select>');
-        select.append('<option>Select a Shipping Option</option>')
-        var options = ['USPS', 'UPS', 'FedEx', 'Other'];
-        $.each(options, function(i, opt){
-          select.append('<option name="' + opt + '">' + opt + '</option>');
+        var select = $('<select name="shipping_company" class="form-control select_with_sections  "></select>');
+        select.append('<option>Select a Shipping Option</option>');
+
+        var options = [
+          ['2 or 3 Business Day Delivery', false],
+          ['FedEx 2 Day AM', true],
+          ['FedEx 2 Day', true],
+          ['FedEx Saver 3 Day', true],
+          ['Ground Delivery', false],
+          ['FedEx Business Ground', true],
+          ['FedEx Home Ground', true],
+          ['FedEx SmartPost', true],
+          ['Same Day Delivery', false],
+          ['FedEx Same Day National', true],
+          ['FedEx Same Day City', true],
+          ['Next Day Delivery', false],
+          ['FedEx First Overnight', true],
+          ['FedEx Priority Overnight', true],
+          ['FedEx Standard Overnight', true],
+          ['2 to 3 Day Business Delivery', false],
+          ['FedEx 2 Day', true]
+        ]
+
+        $.each(options, function(i, option){
+          var option_tag = $('<option name="' + option[0] + '">' + option[0] + '</option>');
+          if(!option[1]){
+            option_tag.attr('disabled', 'disabled');
+          }
+
+          select.append(option_tag);
         });
 
         box.html(select);
@@ -54,5 +79,5 @@
 
         });
       });
-    });    
+    });
   }

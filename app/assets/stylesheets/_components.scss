@@ -87,3 +87,18 @@
     font-size: 40px;
   }
 }
+
+//--- Forms -------------------------------------------------------
+.select_with_sections{
+  // Sections are disabled options
+  option{
+    // padding-left: 10px;
+  }
+
+  option[disabled]{
+    // padding-left: 0px;
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+  }
+}
