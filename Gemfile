@@ -40,7 +40,7 @@ gem 'data_uri'
 
 gem 'figaro'
 
-gem 'faker'
+gem 'faker' 
 
 gem 'whenever', :require => false
 
