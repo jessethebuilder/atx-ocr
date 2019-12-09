@@ -52,6 +52,8 @@ gem 'farm_devise_views', git: 'https://github.com/jessethebuilder/farm_devise_vi
 
 gem 'rtesseract'
 
+ gem 'wkhtmltopdf-heroku', '2.12.5.0'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'mongoid-rspec'
