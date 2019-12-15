@@ -1,7 +1,7 @@
 Rails.application.configure do
   # ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.delivery_method = :smtp
-  config.action_mailer.default_url_options = {:host => ENV['MAILER_HOST']}
+  config.action_mailer.default_url_options = {:host => ENV['APP_HOST']}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.raise_delivery_errors = false

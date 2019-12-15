@@ -59,7 +59,7 @@ describe 'Client Features', type: :feature do
     it 'should save :email2' do
       email2 = Faker::Internet.email
       client_min
-      fill_in 'Email2', with: email2
+      fill_in 'Email 2', with: email2
       click_button 'Create Client'
       Client.last.email2.should == email2
     end
@@ -67,7 +67,7 @@ describe 'Client Features', type: :feature do
     it 'should save :email3' do
       email3 = Faker::Internet.email
       client_min
-      fill_in 'Email3', with: email3
+      fill_in 'Email 3', with: email3
       click_button 'Create Client'
       Client.last.email3.should == email3
     end

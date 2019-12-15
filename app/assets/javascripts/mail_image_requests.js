@@ -38,23 +38,31 @@
         select.append('<option>Select a Shipping Option</option>');
 
         var options = [
-          ['2 or 3 Business Day Delivery', false],
-          ['FedEx 2 Day AM', true],
+          ['USPS', false],
+          ['USPS Priority Mail', true],
+          ['USPS Certified Priority Mail', true],
+          ['USPS Priority Mail Express', true],
+          ['USPS Certified Priority Mail', true],
+          ['USPS Regular Mail', true],
+          ['USPS Certified Regular Mail', true],
+          ['UPS', false],
+          ['UPS Next Day Air', true],
+          ['UPS 2nd Day Air', true],
+          ['UPS 3 Day Select', true],
+          ['UPS Ground', true],
+          ['FedEx', false],
+          ['FedEx 2 Day AM Delivery', true],
           ['FedEx 2 Day', true],
           ['FedEx Saver 3 Day', true],
-          ['Ground Delivery', false],
           ['FedEx Business Ground', true],
           ['FedEx Home Ground', true],
           ['FedEx SmartPost', true],
-          ['Same Day Delivery', false],
           ['FedEx Same Day National', true],
           ['FedEx Same Day City', true],
-          ['Next Day Delivery', false],
           ['FedEx First Overnight', true],
           ['FedEx Priority Overnight', true],
           ['FedEx Standard Overnight', true],
-          ['2 to 3 Day Business Delivery', false],
-          ['FedEx 2 Day', true]
+          ['FedEx Business 2 Day', true]
         ]
 
         $.each(options, function(i, option){
