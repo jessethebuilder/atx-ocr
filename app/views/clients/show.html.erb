@@ -16,41 +16,53 @@
           <%= @client.name %>
           <small><%= mail_to @client.email %></small>
         </h1>
-        <div class="well">
-          <h2>Keywords</h2>
-          <%= @client.keywords.join(', ') %>
+        <% if user_is_admin? %>
+          <div class="well">
+            <h2>Keywords</h2>
+            <%= @client.keywords.join(', ') %>
+          </div>
+        <% end %>
       </div>
-    </div><!-- row -->
+    </div>
+  </div>
 
-    <% @client.mail_images
-              .sort{ |a, b| b.created_at <=> a.created_at }
-              .group_by{ |mi| mi.created_at.to_date }
-              .each do |date, mi_group| %>
+  <% @client.mail_images
+            .sort{ |a, b| b.created_at <=> a.created_at }
+            .group_by{ |mi| mi.created_at.to_date }
+            .each do |date, mi_group| %>
+
+    <div class="full_screen_seperator"></div>
+
+    <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h2 class="text-center" style="margin-bottom:30px;"><%= date.strftime('%B %e, %Y') %></h2>
+          <h2 class="text-center" style="margin-bottom:30px;">
+            Mail Received On:
+            <strong><%= date.strftime('%B %e, %Y') %></strong>
+          </h2>
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-xs-3">
-          <div class="instructions">Click image to view</div>
-        </div>
-        <div class="col-xs-3"></div>
-        <div class="col-xs-6"></div>
-      </div>
-      <div class="row">
-        <div class="mail_image_list">
-          <% mi_group.each do |mi| %>
-            <%= content_tag :div, class: 'row mail_image_row', id: "mail_image_row_#{mi.to_param}" do %>
-              <div class="col-xs-3">
+
+    <div class="mail_image_list">
+      <% mi_group.each_with_index do |mi, i| %>
+        <div class="full_screen_seperator"></div>
+
+        <div class="container-fluid">
+          <%= content_tag :div, class: 'row mail_image_row', id: "mail_image_row_#{mi.to_param}" do %>
+              <div class="col-xs-4">
                 <%= link_to '#', class: 'image_popover_control click_control',
                             data: {'mail-image-id' => mi.to_param, 'image-url' => mi.image} do %>
-                <%= image_tag mi.image, width: '100%', class: 'mail_image_image' %>
+                  <div class="image_placeholder">
+                    Letter <%= i + 1 %>:
+                    <%= mi.created_at.strftime('%D') %>
+                  </div>
+                  <%#= image_tag mi.image, width: '100%', class: 'mail_image_image' %>
                 <% end %>
-
               </div>
-              <div class="col-xs-3">
+
+              <div class="col-xs-2">
                 <% if mi.is_requestable_for?(@client) %>
                   <div class="controls">
                     <div class="form-group">
@@ -62,7 +74,7 @@
                                                               shipping_company: 'slug_for_shipping_company'
                                                             }),
                                    method: :post,
-                                   class: 'btn btn-primary btn-sm forward_request_link', remote: true %>
+                                   class: 'request_link forward_request_link', remote: true %>
                     </div>
                     <div class="form-group">
                       <%= link_to 'Request Scan',
@@ -72,7 +84,7 @@
                                                               mail_image_id: mi.to_param
                                                           }),
                                   method: :post,
-                                  class: 'btn btn-warning btn-sm', remote: true %>
+                                  class: 'request_link', remote: true %>
                     </div>
                     <div class="form-group">
                       <%= link_to 'Request Disposal',
@@ -82,7 +94,7 @@
                                                             mail_image_id: mi.to_param
                                                           }),
                                   method: :post,
-                                  class: 'btn btn-danger btn-sm', remote: true %>
+                                  class: 'request_link', remote: true %>
                     </div>
                   </div>
                 <% end %>
@@ -95,16 +107,11 @@
                 </div>
               </div>
             <% end # mail_image row %>
-          <% end %>
-        </div>
-      </div><!-- row -->
-    <% end %>
-  </div>
-</div>
-
-<script>
-
-</script>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 
 <script>
   $(document).ready(function(){
