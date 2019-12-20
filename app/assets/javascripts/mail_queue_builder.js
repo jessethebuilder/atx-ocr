@@ -83,16 +83,29 @@ function MailQueueBuilder(){
     });
   }
 
+  this.sleep = function(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   this.uploadFiles = function(){
     var t = this;
 
-    $.each(t.files, function(i, file){
+    var wait = false;
+
+    $.each(t.files, async function(i, file){
+      while(wait){
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      wait = true;
+
       t.uploadFile(file.data).then(function(data){
         if(t.upload_count === t.files.length){
           t.feedback.html("All Uploads Complete!");
           window.location = "/mail_queues/" + t.mail_queue_id;
         } else {
           t.feedback.html("Uploaded " + t.upload_count + " Images.");
+          wait = false;
         }
       });
     });
