@@ -1,0 +1,53 @@
+#client{
+  // .image_text{
+  //   background-image: image_url('icons/button.jpg');
+  // }
+
+  // .button-container{
+  // 	width: 20%;
+  // }
+  // .image_placeholder{
+	// 	background: rgb(54,81,152);
+	// 	padding: 25px;
+	// 	width: 100%;
+	// 	border: 0;
+	// 	border-radius: 48px;
+	// 	box-shadow: 0px 6px 15px #354989;
+	// }
+	// .image_placeholder::after{
+	// 	content:'';
+	// }
+
+  
+  .image_placeholder{
+    margin-top: 10px;
+    background-color: #5ab4de;
+    padding: 30px;
+    width: 90%;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 10px 10px 10px grey;
+  }
+
+  .image_placeholder:hover{
+    color: white;
+  }
+
+  .request_link_group{
+    margin-bottom: 25px;
+  }
+
+  .request_link{
+    background-color: #5ab4de;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    box-shadow: 3px 3px 3px grey;
+    text-decoration: none !important;
+  }
+
+  .request_link:hover{
+    color: black
+  }
+}

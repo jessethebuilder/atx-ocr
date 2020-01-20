@@ -68,33 +68,6 @@
   }
 }
 
-.image_placeholder{
-  margin-top: 10px; 
-  background-color: #5ab4de;
-  padding: 30px;
-  width: 90%;
-  border-radius: 30px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 10px 10px 10px grey;
-}
-
-.request_link_group{
-  margin-bottom: 25px;
-}
-
-.request_link{
-  background-color: #5ab4de;
-  border-radius: 15px;
-  padding: 10px;
-  color: white;
-  box-shadow: 3px 3px 3px grey;
-  text-decoration: none;
-}
-
-// .request-link:hover{
-// }
-
 .date{
   font-size: 10px;
   color: $text_color_3;
@@ -143,4 +116,9 @@
     font-weight: 600;
     font-size: 12px;
   }
+}
+
+//--- Tables -------------------------------------------------------
+td {
+  word-break:break-all;
 }

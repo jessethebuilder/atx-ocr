@@ -12,6 +12,7 @@ describe MailQueue, type: :model do
 
   describe 'Associations' do
     it{ should have_many :mail_images }
+    it{ should embed_many :sent_emails }
   end
 
   describe 'Attributes' do

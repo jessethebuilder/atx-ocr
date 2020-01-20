@@ -24,17 +24,21 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
-  has_many :mail_queues
+  # has_many :mail_queues
 
   field :admin, type: Boolean, default: false
 
   scope :clientless, -> do
+    # Remove this, which is used in users_controller. Use :admins scope.
+
     # Clientless is used to determine which Users are not generated from creating
     # a Client. Essentially, admins, at this point.
     clients = Client.where(:user_id.exists => true)
     ids = clients.map{ |c| c.user_id }
     User.not_in(_id: ids)
   end
+
+  scope :admins, -> { where(admin: true) }
 
   has_one :client
 

@@ -49,9 +49,9 @@
       <% mi_group.each_with_index do |mi, i| %>
         <div class="full_screen_seperator"></div>
 
-        <div class="container">
+        <div class="container-fluid">
           <%= content_tag :div, class: 'row mail_image_row', id: "mail_image_row_#{mi.to_param}" do %>
-              <div class="col-xs-2">
+              <div class="col-xs-4">
                 <%= link_to '#', class: 'image_popover_control click_control',
                             data: {'mail-image-id' => mi.to_param, 'image-url' => mi.image} do %>
                   <div class="image_placeholder">
@@ -99,7 +99,7 @@
                   </div>
                 <% end %>
               </div>
-              <div class="col-xs-8">
+              <div class="col-xs-6">
                 <div class="mail_image_requests">
                   <% mi.mail_image_requests.where(client_id: @client).each do |mir| %>
                     <%= render partial: 'mail_image_requests/show', locals: {mail_image_request: mir} %>
@@ -110,8 +110,8 @@
           </div>
         <% end %>
       </div>
+    </div>
   <% end %>
-</div>
 
 <script>
   $(document).ready(function(){
