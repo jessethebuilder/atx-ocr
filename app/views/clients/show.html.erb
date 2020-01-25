@@ -51,55 +51,63 @@
 
         <div class="container">
           <%= content_tag :div, class: 'row mail_image_row', id: "mail_image_row_#{mi.to_param}" do %>
-              <div class="col-xs-2">
+              <div class="col-xs-3">
                 <%= link_to '#', class: 'image_popover_control click_control',
                             data: {'mail-image-id' => mi.to_param, 'image-url' => mi.image} do %>
-                  <div class="image_placeholder">
-                    Letter <%= i + 1 %>:
-                    <%= mi.created_at.strftime('%D') %>
+                  <div class="nice_button">
+                    <span class="text">
+                      Letter <%= i + 1 %>:
+                      <%= mi.created_at.strftime('%D') %>
+                    </span>
                   </div>
                   <%#= image_tag mi.image, width: '100%', class: 'mail_image_image' %>
                 <% end %>
               </div>
 
-              <div class="col-xs-2">
+              <div class="col-xs-3">
                 <% if mi.is_requestable_for?(@client) %>
                   <div class="controls">
                     <div class="form-group">
-                      <%= link_to 'Request Forward',
-                                   mail_image_requests_path(mail_image_request: {
-                                                              type: 'forward',
-                                                              client_id: @client.to_param,
-                                                              mail_image_id: mi.to_param,
-                                                              shipping_company: 'slug_for_shipping_company'
-                                                            }),
-                                   method: :post,
-                                   class: 'request_link forward_request_link', remote: true %>
+                      <%= link_to mail_image_requests_path(mail_image_request: {
+                                  type: 'forward',
+                                  client_id: @client.to_param,
+                                  mail_image_id: mi.to_param,
+                                  shipping_company: 'slug_for_shipping_company'
+                                }), method: :post,
+                                    class: 'request_link forward_request_link', remote: true do %>
+                        <span class="text">Request Forward</span>
+                      <% end %>
                     </div>
                     <div class="form-group">
-                      <%= link_to 'Request Scan',
-                                  mail_image_requests_path(mail_image_request: {
+                      <%= link_to mail_image_requests_path(mail_image_request: {
                                                               type: 'scan',
                                                               client_id: @client.to_param,
                                                               mail_image_id: mi.to_param
                                                           }),
                                   method: :post,
-                                  class: 'request_link', remote: true %>
+                                  class: 'request_link', remote: true do %>
+                        <span class="text">
+                          Request Scan
+                        </span>
+                      <% end %>
                     </div>
                     <div class="form-group">
-                      <%= link_to 'Request Disposal',
-                                  mail_image_requests_path(mail_image_request: {
+                      <%= link_to mail_image_requests_path(mail_image_request: {
                                                             type: 'disposal',
                                                             client_id: @client.to_param,
                                                             mail_image_id: mi.to_param
                                                           }),
                                   method: :post,
-                                  class: 'request_link', remote: true %>
+                                  class: 'request_link', remote: true do %>
+                        <span class="text">
+                          Request Disposal
+                        </span>
+                      <% end %>
                     </div>
                   </div>
                 <% end %>
               </div>
-              <div class="col-xs-8">
+              <div class="col-xs-6">
                 <div class="mail_image_requests">
                   <% mi.mail_image_requests.where(client_id: @client).each do |mir| %>
                     <%= render partial: 'mail_image_requests/show', locals: {mail_image_request: mir} %>

@@ -1,7 +1,7 @@
 <div id="mail_image_requests">
   <%= page_heading 'Mail Image Requests' %>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
         <table class="table table-striped">
@@ -40,13 +40,13 @@
                 <td>
                   <%= link_to c.name, c %>
                 </td>
-                <td>
+                <td style="white-space:nowrap;">
                   <%= mail_to c.email, c.email %>
                 </td>
                 <td>
                   <%= link_to c.phone, "tel:#{c.phone}" %>
                 </td>
-                <td>
+                <td style="white-space:nowrap;">
                   <strong><%= mir.type.titlecase %></strong>
                 </td>
                 <td>
@@ -56,7 +56,7 @@
                 </td>
                 <td>
                   <% if mir.type == 'forward' %>
-                    <%= mir.shipping_company %> 
+                    <%= mir.shipping_company %>
                   <% end %>
                 <td>
                   <!-- <div class="checkbox"> -->

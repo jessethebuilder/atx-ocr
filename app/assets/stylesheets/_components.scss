@@ -119,6 +119,71 @@
 }
 
 //--- Tables -------------------------------------------------------
-td {
-  word-break:break-all;
+// td {
+//   word-break:break-all;
+// }
+
+//--- Nice Buttons -------------------------------------------------------
+.nice_button{
+    // font: normal 400 22px/26px 'Arial', 'Helvetica', 'sans-serif';
+    border-radius: 40px;
+    position: relative;
+    padding: 14px 15px 12px;
+    // padding: 24px 35px 22px;
+    background: linear-gradient(to bottom,  #334b93 0%,#7a91d4 100%);
+    box-shadow: inset 0 0 5px 0 #202529, 0 9px 15px 0 rgba(156, 195, 214, 0.84);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+
+
+    .text{
+      color: black;
+      position: relative;
+      z-index: 2;
+    }
+}
+
+.nice_button:hover{
+  text-decoration: none;
+}
+
+.nice_button:before {
+    content: '';
+    width: calc(100% - 19px);
+    height: 60%;
+    position: absolute;
+    bottom: 7px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #bdeaff;
+    filter: blur(15px);
+    border-radius: 50px;
+}
+
+.nice_button:after {
+    content: '';
+    width: calc(100% - 28px);
+    height: 60%;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(242,242,242,0) 50%,rgba(229,229,229,0) 100%);
+    border-radius: 50px;
+    z-index: 3;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .nice_button{
+        color: #fff;
+    }
+    .nice_button:before{
+        display: none;
+    }
 }

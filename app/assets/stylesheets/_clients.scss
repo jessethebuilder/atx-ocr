@@ -12,13 +12,6 @@
 	// 	width: 100%;
 	// 	border: 0;
 	// 	border-radius: 48px;
-	// 	box-shadow: 0px 6px 15px #354989;
-	// }
-	// .image_placeholder::after{
-	// 	content:'';
-	// }
-
-  
   .image_placeholder{
     margin-top: 10px;
     background-color: #5ab4de;
@@ -39,12 +32,13 @@
   }
 
   .request_link{
-    background-color: #5ab4de;
-    border-radius: 15px;
-    padding: 10px;
-    color: white;
-    box-shadow: 3px 3px 3px grey;
-    text-decoration: none !important;
+    @extend .nice_button;
+    // background-color: #5ab4de;
+    // border-radius: 15px;
+    // padding: 10px;
+    // color: white;
+    // box-shadow: 3px 3px 3px grey;
+    // text-decoration: none !important;
   }
 
   .request_link:hover{
