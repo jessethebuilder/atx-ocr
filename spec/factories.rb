@@ -1,4 +1,4 @@
-include FarmShed
+include AppHelper
 
 FactoryGirl.define do
   sequence(:email){ |n| "test#{n}@test.com" }

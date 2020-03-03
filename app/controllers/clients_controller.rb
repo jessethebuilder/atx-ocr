@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  include FarmShed
+  include AppHelper
   before_action :authenticate_admin!, except: [:edit, :update, :show]
   before_action :authenticate_user!, only: [:edit, :update, :show]
   before_action :set_client, only: [:show, :edit, :update, :destroy, :custom_mail_queue, :unmatch_from]

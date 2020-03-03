@@ -1,7 +1,7 @@
 class Client
   include Mongoid::Document
   include Mongoid::Timestamps
-  include FarmShed
+  include AppHelper
 
   field :name, type: String
   validates :name, presence: true

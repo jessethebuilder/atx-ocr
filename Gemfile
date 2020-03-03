@@ -10,7 +10,7 @@ gem 'sprockets', '3.7.1'
 gem 'sass-rails'
 
 # gem 'mongoid', '6.1.0'
-gem 'mongo', '2.8'  
+gem 'mongo', '2.8'
 gem 'mongoid', '~> 7.0.5'
 
 
@@ -44,10 +44,10 @@ gem 'faker'
 
 gem 'whenever', :require => false
 
-gem 'farm_shed', git: 'https://github.com/jessethebuilder/farm_shed', branch: 'lite'
+# gem 'farm_shed', git: 'https://github.com/jessethebuilder/farm_shed', branch: 'lite'
 # gem 'farm_shed', path: '/var/www/my_gems/farm_shed', branch: 'lite'
 
-gem 'farm_devise_views', git: 'https://github.com/jessethebuilder/farm_devise_views'
+# gem 'farm_devise_views', git: 'https://github.com/jessethebuilder/farm_devise_views'
 # gem 'farm_scrape', git: 'https://github.com/jessethebuilder/farm_scrape.git'
 
 gem 'rtesseract'

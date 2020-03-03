@@ -4,7 +4,7 @@
 //= require jquery-ui/widgets/draggable
 //= require jquery-ui/widgets/droppable
 //= require bootstrap
-//= require farm_shed/all.js
+// require farm_shed/all.js
 //= require mail_queue_builder
 //= require mail_queuer
 //= require mail_image_request_completer
